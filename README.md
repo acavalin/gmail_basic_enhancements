@@ -16,3 +16,7 @@
 * nel campo "Update URL" incollate [questo url](https://github.com/acavalin/gmail_basic_enhancements/raw/master/gmail_basic_enhancements.user.js)
 * premete l'inconcina del floppy per salvare il tutto
 * cliccate su *0 min* nella colonna `Last  updated`
+
+---
+
+This script has also his page on [Greasy Fork](https://greasyfork.org/en/scripts/411344-gmail-basic-enhancements).
