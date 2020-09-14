@@ -4,6 +4,7 @@
 // @description    Extended labels and toggle all messages
 // @include        https://mail.google.com/mail/u/0/h/*
 // @icon           https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico
+// @downloadURL    https://github.com/acavalin/gmail_basic_enhancements/raw/master/gmail_basic_enhancements.user.js
 // @require        https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @version        1.0.0
 // @grant          none
