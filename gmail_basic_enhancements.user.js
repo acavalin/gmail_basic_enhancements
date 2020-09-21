@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name           gmail basic enhancements
 // @namespace      camelsoft
-// @description    Extended labels and toggle all messages
+// @description    Extended labels and check all messages
 // @include        https://mail.google.com/mail/u/0/h/*
 // @icon           https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico
-// @downloadURL    https://github.com/acavalin/gmail_basic_enhancements/raw/master/gmail_basic_enhancements.user.js
 // @require        https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @version        1.0.0
 // @grant          none
@@ -60,7 +59,7 @@ function shorten_sidebar_links () {
   var label = '';
   if (cur_lvl > 0) {
     label += '&#x21B3;&nbsp;';
-    $(this).css('padding-left', (0.75*cur_lvl)+'rem');
+    $(this).css('margin-left', (0.75*cur_lvl)+'rem');
   }//if
 
   $(this).
@@ -72,7 +71,15 @@ function shorten_sidebar_links () {
 $('select[name=tact] option[value^=ac_]').each(shorten_combobox_options);
 $('select[name=tact] option[value^=rc_]').each(shorten_combobox_options);
 
+// striped labels on the left sidebar
+$('td.lb:contains(Labels) a').
+  css('border-radius', '5px').
+  css('display', 'inline-block').
+  css('width', '8rem').
+  css('padding', '1px');
+
 // extend labels on the left sidebar
+$('td.lb:contains(Labels) a:odd').css('background-color', '#dcdcdc');
 $('td.lb:contains(Labels) a').each(shorten_sidebar_links);
 
 // add toggle all messages checkbox
@@ -85,5 +92,7 @@ $('input[type=checkbox][name=toggle_all]').click(function () {
   });
 });
 
+// remove label from emails rows
+$('form[name=f] span.ts > font:first-child').remove();
 // -----------------------------------------------------------------------------
 });})(jQuery);
