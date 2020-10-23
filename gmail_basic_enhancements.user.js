@@ -5,7 +5,7 @@
 // @include        https://mail.google.com/mail/u/0/h/*
 // @icon           https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico
 // @require        https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
-// @version        1.0.0
+// @version        1.0.1
 // @grant          none
 // ==/UserScript==
 
@@ -84,7 +84,7 @@ $('td.lb:contains(Labels) a').each(shorten_sidebar_links);
 
 // add toggle all messages checkbox
 $('<input type="checkbox" name="toggle_all" title="Toggle all messages">').
-  insertBefore('input[name=nvp_a_arch]');
+  prependTo('form[name=f] td:first');
 $('input[type=checkbox][name=toggle_all]').click(function () {
   $(this).prop('checked', false);
   $('input[type=checkbox][name=t]').each(function () {
